@@ -18,19 +18,19 @@
  <main class="row">
     <article class="row col-8" id="game-container"> 
 
-            <!--div class="img-back focusable" id="{{id}}" >
+            <div class="img-back focusable" id="image">
                 <div class="overlay"></div>
-                <h2 class="center-abs">{{name}}</h2>
-                <img alt="{{alt}}" src="{{url}}" >
-            </div-->
+                <h2 class="center-abs"></h2>
+                <img alt="" src="" >
+            </div>
        
 
     </article>
 
     <aside class=" col-4  no-select">
-        <ul class="list-menu focusable" id="cats-list">
+        <ul class="list-menu" id="cats-list">
 
-                <!--li class="list-item">
+                <!--li class="list-item focusable">
                     <img alt="{{name}}" src="{{url}}" >
                     <p>{{name}}</p>
                 </-->
@@ -39,6 +39,28 @@
         </ul>
     </aside>
 </main>
+
+<section id="admin"> 
+    <button id="adminBtn" class="btn info"> admin </button>
+    <div class="admin-form" id="adminForm" style="display: none;"> 
+        <div class="form-group">
+            <label for="name-input">Cat name </label>
+            <input type="text" class="form-control" id="name-input" >
+        </div>
+
+        <div class="form-group">
+                <label for="count-input">Cat counter </label>
+                <input type="number" class="form-control" id="count-input" >
+        </div>
+
+        <button class="btn sucsess" id="save" > save </button>
+        <button class="btn dark" id="cancel"> cancel </button>
+
+
+    </div>
+  
+</section>
+
 <script src="js/jquery.js"></script>
 <script src="js/main-MVC.js"></script>
 </body>
