@@ -57,15 +57,25 @@ let listItems=[
 
 listItems.forEach( (item)=>{
 
-    const view =renderItem(item);
-    document.querySelector('#cats-list').append(view);
-    view.addEventListener('click',(function(itemCopy) {
-        return function() {
-            additem (itemCopy);
-        };
-    })(item));
+    renderItem(item);
+    console.log('222');
 
 } );
+
+
+
+function renderItem(ItemList){
+
+    let itemView= $( '<li class="list-item"> </li> ' );
+    itemView.append( $( `<img alt="${ItemList.name}" src="${ItemList.url}" >` ) );
+    itemView.append( $( `<p>${ItemList.name}</p>` ) );
+           
+
+    document.querySelector('#cats-list').append(itemView[0]);
+
+    itemView[0].addEventListener('click',additem.bind(null,ItemList));
+ 
+}
 
 function additem (item){
     console.log(item);
@@ -74,13 +84,6 @@ function additem (item){
     new Cat(  item.name , item.url );
 }
 
-
-function renderItem(ItemList){
-    let  itemView=$(' <li class="list-item focusable"> </li>' );
-    itemView.append( $( `<img alt="${ItemList.name}" src="${ItemList.url}" />` ) );
-    itemView.append( $( `<p> ${ItemList.name} </p>`) );
-    return itemView[0];     
-}
 
 
 
